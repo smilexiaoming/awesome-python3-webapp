@@ -1,2 +1,4 @@
 # awesome-python3-webapp
-Python repository
+pip install Django==2.1.5
+
+python manage.py runserver
