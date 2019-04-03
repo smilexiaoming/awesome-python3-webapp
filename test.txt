@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 hello 111
 222
+=======
+hello
+>>>>>>> parent of 3a805ef... add 11
