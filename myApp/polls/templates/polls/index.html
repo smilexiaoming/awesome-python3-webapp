@@ -1,11 +1,14 @@
-{% if latest_question_list %}
+{% if latest_question_lists %}
     <ul>
-    {% for question in latest_question_list %}
-    <!-- 在 polls.urls 的 url() 函数中通过 name 参数为 URL 定义了名字，你可以使用 {% url %} 标签代替它 -->
-    <!-- 在 polls/urls.py 文件中稍作修改，加上 app_name 设置命名空间 -->
+    {% for question in latest_question_lists %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+<form action="{% url 'polls:addQuestion' %}" method="POST">
+    {% csrf_token %}
+    <input name='question_text'/>
+    <input type="submit" value="新增问题" />
+</form>
